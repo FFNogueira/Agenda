@@ -1,0 +1,32 @@
+<table class="table table-responsive-sm table-bordered text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <!-- Imprimindo os contatos do usuário: -->
+    <% for(let i of contacts){ %>
+        <tr>
+            <td name="nome">
+                <%= i.nome %>
+            </td>
+            <td name="email">
+                <%= i.email %>
+            </td>
+            <td name="telefone">
+                <%= i.telefone %>
+            </td>
+            <td name="observacao">
+                <%= i.observacao %>
+            </td>
+            <td name="actions">
+                <button class="btn btn-secondary btn-sm mb-lg-0 mb-1" type="button" name="editar">editar</button>
+                <button class="btn btn-secondary btn-sm" type="button" name="deletar">deletar</button>
+            </td>
+        </tr>
+        <% } %>
+</table>

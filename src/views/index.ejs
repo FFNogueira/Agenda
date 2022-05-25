@@ -1,0 +1,37 @@
+<%- include('./includes/header.ejs') %>
+    <!-- <body> -->
+
+    <!-- Navbar: -->
+    <%- include('./includes/navbar.ejs') %>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+
+                <!-- Conteúdo Principal da página: -->
+                <div class="col-10 col-xl-8">
+                    <% if (typeof sessionUser !=='undefined' ){ %>
+                        <h1 class="text-center my-4 font-weight-normal">
+                            Contatos de <span>
+                                <%= sessionUser %>:
+                            </span>
+                        </h1>
+
+                        <a class="btn btn-sm btn-success mb-3" href="/contacts">
+                            Novo contato
+                        </a>
+
+                        <!-- Tabela com os contatos: -->
+                        <%- include('./includes/contacts.ejs') %>
+
+                </div>
+                <% } else{ %>
+                    <h1 class="text-center my-4 font-weight-normal">Bem Vindo ao AGENDA!</h1>
+                    <!-- Imprime uma mensagem de erro! -->
+                    <%- include('./includes/errorMessageNotLogged.ejs') %>
+
+                        <% } %>
+            </div>
+        </div>
+
+        <!-- </body> -->
+        <%- include('./includes/footer.ejs') %>

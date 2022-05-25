@@ -1,0 +1,14 @@
+<% if(typeof contactError !=='undefined' ) { %>
+    <div class="alert alert-danger my-2">
+        <% for(let i of contactError){ %>
+            <p class="small mb-1">
+                <%= i; %>
+            </p>
+            <% } %>
+    </div>
+
+    <% } else { %>
+        <div class="alert alert-success my-2">
+            <p class="small mb-1">Contato cadastrado com sucesso!</p>
+        </div>
+        <% } %>

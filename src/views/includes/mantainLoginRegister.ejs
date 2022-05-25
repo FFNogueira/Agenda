@@ -1,0 +1,11 @@
+<% if(error===2) { %>
+    <script>
+        document.querySelector('#Usuario').value = '<%= usuario %>';
+        document.querySelector('#E-mail2').value = '<%= email %>';
+    </script>
+
+    <% } else { %>
+        <script>
+            document.querySelector('#E-mail1').value = '<%= email %>';
+        </script>
+        <% } %>

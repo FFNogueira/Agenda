@@ -1,0 +1,14 @@
+<% if(typeof editError !=='undefined' ) { %>
+    <div class="alert alert-danger my-2">
+        <% for(let i of editError){ %>
+            <p class="small mb-1">
+                <%= i; %>
+            </p>
+            <% } %>
+    </div>
+
+    <% } else { %>
+        <div class="alert alert-success my-2">
+            <p class="small mb-1">Edição realizada com sucesso!</p>
+        </div>
+        <% } %>

@@ -1,0 +1,59 @@
+<%- include('./includes/header.ejs') %>
+    <!-- <body> -->
+
+    <!-- Navbar: -->
+    <%- include('./includes/navbar.ejs') %>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <!-- Conteúdo Principal da página: -->
+                <div class="col-md-8 mt-4 text-center">
+                    <h1 class="font-weight-normal">Edite o contato!</h1>
+                </div>
+
+                <div class="col-md-2"></div>
+
+            </div>
+            <div class="row justify-content-center">
+
+                <!-- Conteúdo Principal da página: -->
+                <div class="col-md-4 mt-4 border">
+                    <form class="my-2" action="/edit" method="post">
+
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" name="nome" id="nome" value="<%=editBody.nome%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                value="<%=editBody.email%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" class="form-control" name="telefone" id="telefone"
+                                value="<%=editBody.telefone%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="observacao">Observação:</label>
+                            <input type="text" class="form-control" name="observacao" id="observacao"
+                                value="<%=editBody.observacao%>">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                    <% if(typeof editSuccess !=='undefined' || typeof editError !=='undefined' ){ %>
+                        <%- include('./includes/editMessages.ejs') %>
+                            <% } %>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- </body> -->
+        <%- include('./includes/footer.ejs') %>

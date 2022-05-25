@@ -1,0 +1,56 @@
+<%- include('./includes/header.ejs') %>
+    <!-- <body> -->
+
+    <!-- Navbar: -->
+    <%- include('./includes/navbar.ejs') %>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <!-- Conteúdo Principal da página: -->
+                <div class="col-md-8 mt-4 text-center">
+                    <h1 class="font-weight-normal">Adicione novos contatos!</h1>
+                </div>
+
+                <div class="col-md-2"></div>
+
+            </div>
+            <div class="row justify-content-center">
+
+                <!-- Conteúdo Principal da página: -->
+                <div class="col-md-4 mt-4 border">
+                    <form class="my-2" action="/contacts" method="post">
+
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" name="nome" id="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" class="form-control" name="telefone" id="telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="observacao">Observação:</label>
+                            <input type="text" class="form-control" name="observacao" id="observacao">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Salvar contato</button>
+                    </form>
+                    <% if(typeof contactError !=='undefined' || typeof contactSuccess !=='undefined' ){ %>
+                        <%- include('./includes/contactMessages.ejs') %>
+                            <% } %>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- </body> -->
+        <%- include('./includes/footer.ejs') %>

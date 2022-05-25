@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-primary bg-dark font-weight-normal">
+    <!-- Logomarca-link da empresa -->
+    <a href="/" class="navbar-brand font-weight-bold">AGENDA</a>
+    <!-- Botão caso a Barra de Navegação entre em modo "colapse"-->
+    <button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#minhaNav"
+        aria-controls="minhaNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Usando imagem SVG como ícone do toggle-button-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
+
+    </button>
+    <!-- "div" para colapsar os links da Barra de Navegação, se necessário -->
+    <div class="collapse navbar-collapse justify-content-end" id="minhaNav">
+        <!-- Links da Barra de Navegação-->
+        <div class="navbar-nav">
+            <% if (typeof sessionUser !=='undefined' ){ %>
+                <a class="nav-item nav-link" href="/logout">logout</a>
+                <% } else{ %>
+                    <a class="nav-item nav-link" href="/login">login</a>
+                    <%}%>
+                        <a class="nav-item nav-link" href="/">Link03</a>
+        </div>
+    </div>
+
+</nav>
